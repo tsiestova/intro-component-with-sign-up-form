@@ -1,0 +1,140 @@
+@use '../styles/abstracts/functions' as media;
+
+.form__wrap {
+  padding: 24px;
+  background: #FFFFFF;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.14688);
+  border-radius: 10px;
+
+
+  @include media.tablet {
+    padding: 38px 39px 46px 40px;
+  }
+}
+
+.register__form {
+  margin-bottom: 9px;
+
+
+  &.error {
+    .input__wrap {
+      border: 1px solid red;
+      position: relative;
+
+      &:after {
+        //content: '';
+        background-image: url('../../public/img/icon-error.svg');
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 16px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+
+    .error__message {
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 16px;
+      text-align: right;
+      color: #FF7979;
+      visibility: hidden;
+    }
+
+    input {
+      color: #FF7979;
+    }
+
+  }
+
+  .input__wrap {
+    border: 1px solid #DEDEDE;
+    border-radius: 5px;
+    display: block;
+    padding: 1px;
+
+    @include media.tablet {
+      //margin-bottom: 20px;
+    }
+  }
+
+  .form__item_wrap {
+    text-align: right;
+    margin-bottom: 14px;
+  }
+
+
+  input {
+    appearance: none;
+    border: none;
+    outline: none;
+    height: 56px;
+    padding: 15px 19px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0.25px;
+    color: #3D3B48;
+
+    @include media.tablet {
+      height: 54px;
+    }
+
+    &::-webkit-input-placeholder {
+      @include media.input-placeholder;
+    }
+
+    &::-moz-placeholder {
+      @include media.input-placeholder;
+    }
+
+    &:-ms-input-placeholder {
+      @include media.input-placeholder;
+    }
+
+    &:-moz-placeholder {
+      @include media.input-placeholder;
+    }
+  }
+}
+
+.register__condition {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 21px;
+  text-align: center;
+  color: #BAB7D4;
+
+  a {
+    font-weight: 700;
+    color: #FF7979;
+    text-decoration: none;
+  }
+}
+
+
+.btn__submit {
+  background: #38CC8B;
+  box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 15px;
+
+
+  &:hover {
+    @include media.desktop {
+      cursor: pointer;
+      background: #77E2B3;
+      box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
+    }
+  }
+}

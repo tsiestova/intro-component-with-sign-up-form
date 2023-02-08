@@ -1,0 +1,24 @@
+@use '../styles/abstracts';
+@use '../styles/abstracts/functions' as media;
+
+
+
+.layout {
+    padding: 0 24px;
+    @include media.tablet {
+        //display: flex;
+        //align-items: center;
+        //gap: 66px;
+        padding: 0;
+        max-width: 1110px;
+
+    }
+
+    .box_wrap {
+        width: 100%;
+    }
+
+}
+
+
+

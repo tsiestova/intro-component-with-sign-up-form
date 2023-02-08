@@ -1,0 +1,22 @@
+@use './abstracts';
+@use '../styles/abstracts/functions' as media;
+
+
+body {
+  font-family: abstracts.$font;
+  background: abstracts.$bg-color;
+}
+
+.card__wrap {
+  background: #FF7979 url('../../public/img/bg-intro-mobile.png');
+  min-height: 100%;
+  background: abstracts.$bg-color;
+
+  @include media.tablet {
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
