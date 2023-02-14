@@ -1,12 +1,11 @@
 
 ### Links
 
-- Live Site: [Demo](https://faq-accordion-card-lake-tau.vercel.app/)
+- Live Site: [Demo](https://intro-component-with-sign-up-form-ashy.vercel.app/)
 
 ### Built with
 
 - SCSS properties
-- Flexbox
 - Mobile-first workflow
 - React
  
