@@ -1,28 +1,28 @@
 import React from "react";
-import Page from "./page.module.scss";
-import Layout from "./layout.module.scss";
+import page from "./page.module.scss";
+import layout from "./layout.module.scss";
 import Form from "./Form";
 
 const Card = () => {
   return (
-    <div className={Page.card}>
-      <div className={Page.box_wrap_text}>
-        <div className={Layout.layout}>
-          <h1 className={Page.card__heading}>
+    <div className={page.card}>
+      <div className={page.box_wrap_text}>
+        <div className={layout.layout}>
+          <h1 className={page.card__heading}>
             Learn to code by watching others
           </h1>
-          <div className={Page.card__text}>
+          <div className={page.card__text}>
             See how experienced developers solve problems in real-time. Watching
             scripted tutorials is great, but understanding how developers think
             is invaluable.
           </div>
         </div>
       </div>
-      <div className={Page.box_wrap_form}>
-        <div className={Layout.layout}>
-          <div className={Page.card__proposition}>
-            <div className={Page.card__proposition_text}>
-              <span className={Page.proposition_main}></span>Try it free 7 days
+      <div className={page.box_wrap_form}>
+        <div className={layout.layout}>
+          <div className={page.card__proposition}>
+            <div className={page.card__proposition_text}>
+              <span className={page.proposition_main}>Try it free 7 days</span>
               then
               <span>$</span>
               <span>20</span>/mo. thereafter

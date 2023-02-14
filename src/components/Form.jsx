@@ -29,6 +29,22 @@ const initialState = {
   },
 };
 
+const isValidInput = (type, value) => {
+  switch (type) {
+    case "firstName":
+      return (value && value.length && value.trim().length) > 0;
+    case "lastName":
+      return (value && value.length && value.trim().length) > 0;
+    case "email":
+      return (
+        (value && value.length && value.trim().length) > 0 &&
+        /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(value)
+      );
+    case "password":
+      return (value && value.length && value.trim().length) > 0;
+  }
+};
+
 const Form = () => {
   const [form, setForm] = useState(initialState);
 
@@ -68,24 +84,6 @@ const Form = () => {
         },
       },
     }));
-  };
-
-  const isValidInput = (type, value) => {
-    switch (type) {
-      case "firstName":
-        return (value && value.length && value.trim().length) > 0;
-      case "lastName":
-        return (value && value.length && value.trim().length) > 0;
-      case "email":
-        return (
-          (value && value.length && value.trim().length) > 0 &&
-          /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(
-            value
-          )
-        );
-      case "password":
-        return (value && value.length && value.trim().length) > 0;
-    }
   };
 
   const handleFormSubmit = (e) => {
