@@ -4,6 +4,7 @@ import formStyles from "./form.module.scss";
 const initialState = {
   isSubmitted: false,
   isFormValid: true,
+  canSave: true,
 
   form: {
     firstName: {
@@ -41,12 +42,14 @@ const isValidInput = (type, value) => {
         /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(value)
       );
     case "password":
-      return (value && value.length && value.trim().length) > 0;
+      return (value && value.length && value.trim().length) > 3;
   }
 };
 
 const Form = () => {
   const [form, setForm] = useState(initialState);
+
+  // console.log(form);
 
   const handleInputChange = (e) => {
     const inputEl = e.target;
@@ -55,15 +58,13 @@ const Form = () => {
 
     setForm((data) => ({
       ...data,
-      isSubmitted: false,
-      isFormValid: true,
-
+      canSave: true,
       form: {
         ...data.form,
         [name]: {
           ...data.form[name],
           value,
-          isTouched: false,
+          isTouched: true,
           isValid: isValidInput(name, value),
         },
       },
@@ -81,6 +82,7 @@ const Form = () => {
         [name]: {
           ...data.form[name],
           isTouched: true,
+          canSave: true,
         },
       },
     }));
@@ -97,6 +99,7 @@ const Form = () => {
       ...data,
       isSubmitted: true,
       isFormValid,
+      canSave: false,
     }));
 
     if (!isFormValid) {
@@ -113,6 +116,7 @@ const Form = () => {
       }),
     })
       .then((data) => {
+        console.log("SUBMIED");
         setForm(initialState);
       })
 
@@ -179,6 +183,7 @@ const Form = () => {
             </span>
           ) : null}
         </div>
+
         <div className={formStyles.form__item_wrap}>
           <div
             className={
@@ -230,10 +235,11 @@ const Form = () => {
             </span>
           ) : null}
         </div>
+
         <button
           type="submit"
           className={formStyles.btn__submit}
-          disabled={form.isSubmitted}
+          disabled={!form.canSave}
         >
           CLAIM YOUR FREE TRIAL
         </button>

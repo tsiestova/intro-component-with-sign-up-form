@@ -24,7 +24,6 @@
 
   .input__wrap {
     &.error {
-      border: 1px solid red;
       position: relative;
 
       &:after {
@@ -40,6 +39,9 @@
       }
 
       input {
+        border: 1px solid red;
+        outline: none;
+
         &::-webkit-input-placeholder {
           color: #ff7979;
         }
